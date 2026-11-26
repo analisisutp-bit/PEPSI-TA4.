@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PEPSI: una marca global – Historia, marketing y sostenibilidad</title>
+<meta name="description" content="Presentación web sobre Pepsi: historia, evolución del logo, marketing, competencia y sostenibilidad.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%23004B93'/><path d='M2 50a48 48 0 0 1 96 0z' fill='%23E32934'/></svg>">
+<style>
+:root{--red:#E32934;--blue:#004B93;--navy:#0A1628;--navy2:#121C34;--sky:#B4D7FF;--cyan:#00A3FF;--light:#DCE2EB;--white:#fff}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{font-family:Arial,Helvetica,sans-serif;color:var(--navy2);background:var(--white);line-height:1.6}
+img{max-width:100%;display:block}
+h1,h2,h3{font-family:"Arial Black",Arial,sans-serif;line-height:1.15}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+section{padding:80px 0}
+.dark{background:var(--navy);color:var(--white)}
+.blue{background:var(--blue);color:var(--white)}
+.light{background:#F2F5FA}
+h2.t{font-size:clamp(1.8rem,4vw,2.6rem);text-transform:uppercase;margin-bottom:12px}
+.lead{max-width:680px;opacity:.9;margin-bottom:40px;font-size:1.05rem}
+.eyebrow{color:var(--red);font-weight:700;letter-spacing:.12em;font-size:.8rem;text-transform:uppercase;margin-bottom:8px}
+.dark .eyebrow,.blue .eyebrow{color:var(--cyan)}
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;background:var(--red);height:56px;box-shadow:0 2px 12px rgba(0,0,0,.25)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
+nav .brand{display:flex;align-items:center;gap:10px;color:#fff;font-family:"Arial Black",Arial;text-decoration:none}
+nav .brand img{width:34px;height:34px;border-radius:50%}
+nav ul{display:flex;list-style:none;height:100%}
+nav li a{display:flex;align-items:center;height:56px;padding:0 16px;color:#fff;text-decoration:none;font-size:.78rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+nav li a:hover{background:rgba(255,255,255,.15)}
+nav li a.active{background:var(--blue)}
+#burger{display:none;background:none;border:0;color:#fff;font-size:1.7rem;cursor:pointer}
+@media(max-width:860px){#burger{display:block}nav ul{display:none;position:absolute;top:56px;left:0;right:0;background:var(--red);flex-direction:column;height:auto}nav ul.open{display:flex}nav li a{height:48px;padding:0 20px}}
+/* hero */
+#inicio{background:radial-gradient(circle at 70% 30%,#0b4aa0 0,var(--blue) 45%,#00306a 100%);color:#fff;min-height:100vh;display:flex;align-items:center;padding-top:96px;text-align:center;overflow:hidden}
+#inicio .logo{border-radius:50%;width:min(260px,55vw);margin:0 auto 28px;filter:drop-shadow(0 12px 30px rgba(0,0,0,.35));animation:float 5s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-10px)}}
+#inicio h1{font-size:clamp(2.2rem,6vw,4rem)}
+#inicio p{font-size:1.2rem;color:var(--sky);margin:14px 0 30px}
+.btn{display:inline-block;background:var(--red);color:#fff;text-decoration:none;font-weight:700;padding:14px 28px;border-radius:999px;transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.tag{margin-top:34px;letter-spacing:.35em;color:var(--cyan);font-weight:700;font-size:.85rem}
+/* grids */
+.grid{display:grid;gap:22px}
+.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}.g5{grid-template-columns:repeat(5,1fr)}
+@media(max-width:900px){.g2,.g3{grid-template-columns:1fr}.g5{grid-template-columns:repeat(2,1fr)}}
+.card{background:#fff;border-radius:18px;padding:26px;box-shadow:0 8px 28px rgba(10,22,40,.10)}
+.dark .card{background:var(--navy2);box-shadow:none;border:1px solid rgba(180,215,255,.18)}
+.card h3{font-size:1.05rem;text-transform:uppercase;margin-bottom:10px;color:var(--blue)}
+.dark .card h3{color:var(--cyan)}
+.big{font-family:"Arial Black",Arial;font-size:clamp(2rem,5vw,3rem);color:var(--red);line-height:1}
+.stat{text-align:center}.stat:nth-child(even) .big{color:var(--blue)}
+.dark .stat .big,.dark .stat:nth-child(even) .big{color:var(--cyan)}
+.stat p{margin-top:10px;font-size:.92rem}
+.pic{border-radius:18px;overflow:hidden;box-shadow:0 8px 28px rgba(10,22,40,.2)}
+.pic img{width:100%;height:100%;object-fit:cover}
+/* timeline */
+.timeline{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;margin-top:20px}
+@media(max-width:900px){.timeline{grid-template-columns:1fr}}
+.step{text-align:center}
+.step .year{color:var(--cyan);font-weight:700;margin-bottom:10px}
+.step .logo{height:120px;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.step .logo img{max-height:110px;max-width:100%;object-fit:contain;background:#fff;border-radius:14px;padding:8px}
+.step h3{font-size:.95rem;color:#fff;margin-bottom:8px}
+.step p{font-size:.88rem;color:var(--light)}
+.step.now .year{color:var(--red)}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:36px}
+@media(max-width:900px){.gallery{grid-template-columns:repeat(2,1fr)}}
+.gallery .pic{aspect-ratio:3/4}
+.callout{background:var(--blue);color:#fff;border-radius:18px;padding:22px 26px;margin-bottom:36px;font-size:1.1rem}
+.gallery.wide{grid-template-columns:repeat(3,1fr)}.gallery.wide .pic{aspect-ratio:16/10}
+@media(max-width:900px){.gallery.wide{grid-template-columns:1fr}}
+.note{font-size:.8rem;opacity:.75;margin-top:26px}
+.eco .row{display:grid;grid-template-columns:200px 1fr;gap:22px;align-items:center;background:#fff;color:var(--navy2);border-radius:18px;padding:16px;margin-bottom:18px}
+.eco .row .pic{box-shadow:none;aspect-ratio:4/3}
+.eco h3{color:var(--blue);margin-bottom:6px;text-transform:uppercase;font-size:1rem}
+@media(max-width:700px){.eco .row{grid-template-columns:1fr}}
+.meta{background:rgba(0,0,0,.28);border-radius:18px;padding:22px;margin-top:20px}
+.concl .num{width:56px;height:56px;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center;font-family:"Arial Black";font-size:1.5rem;margin:0 auto 14px}
+.concl .card{text-align:center}.concl .card:nth-child(2) .num{background:var(--blue)}
+.closing{text-align:center;font-size:1.3rem;font-weight:700;margin-top:40px}
+ul.src{list-style:none}ul.src li{padding:12px 0 12px 34px;position:relative;border-bottom:1px solid #e3e8f0}
+ul.src li::before{content:"";position:absolute;left:0;top:19px;width:14px;height:14px;border-radius:50%;background:var(--red)}
+ul.src li:nth-child(even)::before{background:var(--blue)}
+footer{background:var(--blue);color:#fff;text-align:center;padding:70px 20px}
+footer img{width:140px;margin:0 auto 20px;border-radius:50%}
+footer h2{font-size:clamp(2.2rem,6vw,3.6rem)}
+footer p{color:var(--sky);font-size:1.3rem;margin:8px 0}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important}}
+.reveal{opacity:0;transform:translateY(24px);transition:.7s}.reveal.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+<nav>
+ <div class="wrap">
+  <a class="brand" href="#inicio"><img src="assets/s2_27.png" alt="Logotipo de Pepsi"><span>PEPSI</span></a>
+  <button id="burger" aria-label="Abrir menú">☰</button>
+  <ul id="menu">
+   <li><a href="#quienes">Quiénes somos</a></li>
+   <li><a href="#logo">Marca y logo</a></li>
+   <li><a href="#marketing">Marketing</a></li>
+   <li><a href="#competencia">Competencia</a></li>
+   <li><a href="#sostenibilidad">Sostenibilidad</a></li>
+  </ul>
+ </div>
+</nav>
+
+<section id="inicio">
+ <div class="wrap">
+  <img class="logo" src="assets/s2_27.png" alt="Logotipo actual de Pepsi en forma de globo azul, blanco y rojo">
+  <h1>PEPSI: UNA MARCA GLOBAL</h1>
+  <p>Historia, marketing y sostenibilidad</p>
+  <a class="btn" href="#quienes">Comenzar</a>
+  <div class="tag">THIRSTY FOR MORE</div>
+ </div>
+</section>
+
+<section id="quienes">
+ <div class="wrap">
+  <div class="eyebrow">¿Quiénes somos?</div>
+  <h2 class="t">De una farmacia al mundo</h2>
+  <div class="grid g2" style="align-items:center">
+   <div>
+    <p style="margin-bottom:14px">Pepsi nació en 1893 en Carolina del Norte (EE. UU.), creada por el farmacéutico Caleb Bradham bajo el nombre original de «Brad's Drink».</p>
+    <p>En 1898 adoptó el nombre Pepsi-Cola y hoy es el producto bandera de PepsiCo, uno de los mayores grupos de alimentos y bebidas del planeta.</p>
+   </div>
+   <div class="pic reveal"><img src="assets/s3_24.jpg" alt="Latas de Pepsi de distintas épocas sobre fondo azul con el lema #EstaEsLaPepsi"></div>
+  </div>
+ </div>
+</section>
+
+<section class="dark" id="cifras">
+ <div class="wrap">
+  <div class="eyebrow">Pepsi en cifras</div>
+  <h2 class="t">Los números de la marca</h2>
+  <p class="lead">Los datos que explican el tamaño de la marca y su compromiso.</p>
+  <div class="grid g5">
+   <div class="card stat reveal"><div class="big">1893</div><p>Año de creación en New Bern, EE. UU.</p></div>
+   <div class="card stat reveal"><div class="big">+200</div><p>Países y territorios donde se consume hoy</p></div>
+   <div class="card stat reveal"><div class="big">23</div><p>Marcas del grupo PepsiCo que facturan más de US$ 1,000M al año (Lay's, Gatorade, Doritos, Quaker)</p></div>
+   <div class="card stat reveal"><div class="big">+100%</div><p>Del agua utilizada se repone en zonas de alto estrés hídrico</p></div>
+   <div class="card stat reveal"><div class="big">2040</div><p>Meta Net-Zero, una década antes del Acuerdo de París</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="dark" id="logo" style="background:#000">
+ <div class="wrap">
+  <div class="eyebrow">Marca y logo</div>
+  <h2 class="t">Evolución de marca y logo</h2>
+  <p class="lead">Más de un siglo de cambios visuales para mantenerse vigente en cada época.</p>
+  <div class="timeline">
+   <div class="step reveal"><div class="year">1898 – 1940</div><div class="logo"><img src="assets/logo1_script.jpg" alt="Logotipo de Pepsi-Cola 1898-1940, tipografía script roja"></div><h3>Tipografía script</h3><p>Letras cursivas rojas sobre fondo blanco, muy parecidas al estilo clásico de época.</p></div>
+   <div class="step reveal"><div class="year">1950 – 1962</div><div class="logo"><img src="assets/logo2_chapa.png" alt="Logotipo de Pepsi 1950-1962, la chapa de botella tricolor"></div><h3>Nace la chapa</h3><p>Se introduce el diseño circular tricolor (rojo, blanco y azul) en forma de tapa de botella.</p></div>
+   <div class="step reveal"><div class="year">1973 – 2008</div><div class="logo"><img src="assets/logo3_globo.jpg" alt="Logotipo de Pepsi 1973-2008, el globo Pepsi con texto dentro"></div><h3>El globo Pepsi</h3><p>Formas geométricas limpias y minimalistas que consolidan el ícono global.</p></div>
+   <div class="step reveal"><div class="year">2009 – 2023</div><div class="logo"><img src="assets/logo4_minimalista.png" alt="Logotipo de Pepsi 2009-2023, globo minimalista"></div><h3>El globo minimalista</h3><p>Rediseño radical hacia lo simple y digital. La franja interna se inclinó simulando una sonrisa sutil, eliminando el texto de adentro.</p></div>
+   <div class="step now reveal"><div class="year">2023 – HOY</div><div class="logo"><img src="assets/logo5_2023.png" alt="Logotipo de Pepsi 2023 – hoy, globo con texto PEPSI"></div><h3>Rebranding retro</h3><p>Vuelve el texto PEPSI dentro del globo con bordes negros y azul eléctrico vibrante.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="marketing">
+ <div class="wrap">
+  <div class="eyebrow">Marketing</div>
+  <h2 class="t">Estrategia</h2>
+  <div class="callout"><strong>Clave del éxito:</strong> Pepsi no vende solo un refresco; asocia la lata con música, entretenimiento y experiencias digitales.</div>
+  <div class="grid g3">
+   <div class="card reveal"><h3>La Generación Pepsi</h3><p>En lugar de vender nostalgia familiar, Pepsi se posicionó como la bebida de los jóvenes, el cambio y la actitud rebelde.</p></div>
+   <div class="card reveal"><h3>Íconos de la música</h3><p>Alianzas históricas con figuras globales como Michael Jackson, Britney Spears, Beyoncé, Shakira y Bad Bunny.</p></div>
+   <div class="card reveal"><h3>Deporte de élite</h3><p>Presencia masiva en eventos de máxima audiencia: Show de Medio Tiempo del Super Bowl y UEFA Champions League.</p></div>
+  </div>
+  <div class="gallery">
+   <div class="pic reveal"><img loading="lazy" src="assets/s6_21.jpg" alt="Afiche «This is the Pepsi for every generation» con Michael Jackson"></div>
+   <div class="pic reveal"><img loading="lazy" src="assets/s6_22.jpg" alt="Afiche de Bad Bunny para los 125 años de Pepsi"></div>
+   <div class="pic reveal"><img loading="lazy" src="assets/s6_23.jpg" alt="Afiche de Pepsi con el trofeo de la UEFA Champions League"></div>
+   <div class="pic reveal"><img loading="lazy" src="assets/s6_24.jpg" alt="Messi y Salah en la campaña mundial de Pepsi y la UEFA"></div>
+  </div>
+ </div>
+</section>
+
+<section class="dark" id="competencia" style="background:var(--navy)">
+ <div class="wrap">
+  <div class="eyebrow">Competencia</div>
+  <h2 class="t">Pepsi vs. Coca-Cola</h2>
+  <div class="grid g3" style="margin-top:30px">
+   <div class="card reveal"><div class="big" style="color:var(--cyan)">+50%</div><h3 style="margin-top:12px">Preferencia en sabor</h3><p style="font-size:.9rem;color:var(--sky)">en pruebas a ciegas del Reto Pepsi*</p><p style="margin-top:10px">Nuestro perfil cítrico más fresco y dinámico supera repetidamente a la competencia cuando el consumidor decide solo por el sabor real, sin etiquetas.</p></div>
+   <div class="card reveal"><div class="big" style="color:var(--cyan)">2X</div><h3 style="margin-top:12px">Ecosistema imparable</h3><p style="font-size:.9rem;color:var(--sky)">alcance en consumo diario (bebidas + snacks)</p><p style="margin-top:10px">Mientras la competencia depende casi solo de líquidos, PepsiCo domina cada ocasión de consumo integrando bebidas con líderes como Lay's, Doritos y Gatorade.</p></div>
+   <div class="card reveal"><div class="big" style="color:var(--cyan)">#1</div><h3 style="margin-top:12px">Cultura y juventud</h3><p style="font-size:.9rem;color:var(--sky)">en conexión con música, deporte y cultura pop</p><p style="margin-top:10px">Frente a un enfoque tradicionalista y nostálgico, Pepsi marca el ritmo global con la Champions League y los artistas que definen cada generación.</p></div>
+  </div>
+  <div class="gallery wide">
+   <div class="pic reveal"><img loading="lazy" src="assets/s7_83.jpg" alt="Oso polar con una lata de Pepsi en el comercial «The Choice»"></div>
+   <div class="pic reveal"><img loading="lazy" src="assets/s7_78.jpg" alt="Oso polar con antifaz y latas de Pepsi y Coca-Cola, comercial del Super Bowl 2026"></div>
+   <div class="pic reveal"><img loading="lazy" src="assets/s7_85.jpg" alt="Etiquetas de Pepsi con diseños inspirados en la cultura peruana"></div>
+   <div class="pic reveal"><img loading="lazy" src="assets/s7_84.jpg" alt="Productos del portafolio de PepsiCo: Lay's, Doritos, Pepsi y otros"></div>
+   <div class="pic reveal"><img loading="lazy" src="assets/s7_86.jpg" alt="Celebración de los 125 años de Pepsi con artistas y deportistas"></div>
+   <div class="pic reveal"><img loading="lazy" src="assets/s7_81.jpg" alt="Lata antigua de Pepsi con el mensaje «Take the Pepsi Challenge»" style="object-fit:contain;background:#fff"></div>
+  </div>
+  <p class="note">* El Reto Pepsi fue una prueba promocional de la marca; las cifras provienen de comunicación corporativa, no de un estudio independiente.</p>
+ </div>
+</section>
+
+<section class="blue" id="sostenibilidad">
+ <div class="wrap">
+  <div class="eyebrow">Sostenibilidad</div>
+  <h2 class="t">Sostenibilidad con impacto real (pep+)</h2>
+  <p class="lead">Con PepsiCo Positive (pep+), lideramos la transformación de la industria de bebidas hacia un modelo circular, regenerativo y libre de emisiones netas.</p>
+  <div class="eco">
+   <div class="row reveal"><div class="pic"><img loading="lazy" src="assets/s8_65.jpg" alt="Botellas de Pepsi en envase de plástico retornable"></div><div><h3>Envases circulares</h3><p>Migración acelerada a botellas fabricadas 100% con plástico reciclado (rPET) y expansión de sistemas retornables y SodaStream para eliminar plástico virgen.</p></div></div>
+   <div class="row reveal"><div class="pic"><img loading="lazy" src="assets/s8_66.jpg" alt="Lata de Pepsi Zero Azúcar con el mensaje «¿Estás a dieta?»"></div><div><h3>Portafolio más saludable</h3><p>Impulso líder con Pepsi Zero Azúcar, reformulación continua de recetas y reducción activa de azúcares añadidos manteniendo todo el sabor.</p></div></div>
+   <div class="row reveal"><div class="pic"><img loading="lazy" src="assets/s8_67.jpg" alt="PepsiCo Water Stewardship: cuidado del agua con paisaje agrícola"></div><div><h3>Impacto hídrico neto positivo</h3><p>Reabastecimiento de más del 100% del agua utilizada en zonas de alto estrés hídrico y agricultura regenerativa en más de 7 millones de acres.</p></div></div>
+  </div>
+  <div class="meta"><strong>META NET-ZERO 2040</strong><br>Una década antes del Acuerdo de París.</div>
+ </div>
+</section>
+
+<section class="dark concl" id="conclusiones">
+ <div class="wrap">
+  <div class="eyebrow">Cierre</div>
+  <h2 class="t">Conclusiones</h2>
+  <div class="grid g3" style="margin-top:30px">
+   <div class="card reveal"><div class="num">1</div><h3>Una marca con historia</h3><p>De «Brad's Drink» en 1893 a un ícono global: cinco etapas de logo que muestran su adaptación a cada época.</p></div>
+   <div class="card reveal"><div class="num">2</div><h3>Marketing con cultura pop</h3><p>Música, deporte y juventud posicionan a Pepsi como la elección de cada generación.</p></div>
+   <div class="card reveal"><div class="num">3</div><h3>Compromiso sostenible</h3><p>Con pep+ apuesta por envases circulares, portafolio más saludable y Net-Zero al 2040.</p></div>
+  </div>
+  <p class="closing">Pepsi no vende solo un refresco: vende experiencias.</p>
+ </div>
+</section>
+
+<section id="fuentes">
+ <div class="wrap">
+  <div class="eyebrow" style="color:var(--red)">Referencias</div>
+  <h2 class="t" style="color:var(--blue)">Fuentes consultadas</h2>
+  <ul class="src" style="margin-top:20px">
+   <li>PepsiCo – Estrategia PepsiCo Positive (pep+): www.pepsico.com</li>
+   <li>Pepsi – Sitio oficial de la marca: www.pepsi.com</li>
+   <li>Wikipedia – Artículo «Pepsi» (historia y evolución del logotipo)</li>
+   <li>Imágenes: Wikipedia, El Impulso, Roastbrief, Pixartprinting, Behance</li>
+   <li>Datos de marketing y competencia: comunicación corporativa de PepsiCo</li>
+  </ul>
+ </div>
+</section>
+
+<footer>
+ <img src="assets/s2_27.png" alt="Logotipo de Pepsi">
+ <h2>¡GRACIAS!</h2>
+ <p>¿Preguntas?</p>
+ <div class="tag">THIRSTY FOR MORE</div>
+</footer>
+
+<script>
+(function(){
+  var burger=document.getElementById('burger'),menu=document.getElementById('menu');
+  burger.addEventListener('click',function(){menu.classList.toggle('open')});
+  menu.addEventListener('click',function(e){if(e.target.tagName==='A')menu.classList.remove('open')});
+  var links=[].slice.call(menu.querySelectorAll('a'));
+  var targets=links.map(function(a){return document.querySelector(a.getAttribute('href'))});
+  function onScroll(){
+    var y=window.scrollY+120,cur=-1;
+    targets.forEach(function(t,i){if(t&&t.offsetTop<=y)cur=i});
+    links.forEach(function(a,i){a.classList.toggle('active',i===cur)});
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  var els=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+    els.forEach(function(el){io.observe(el)});
+  }else{els.forEach(function(el){el.classList.add('in')})}
+})();
+</script>
+</body>
+</html>
